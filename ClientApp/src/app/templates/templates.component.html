@@ -1,3 +1,31 @@
 <p>
   templates works!
 </p>
+
+
+<h1>Notification Templates</h1>
+
+<p>A list of templates goes here...</p>
+
+<p *ngIf="!templates"><em>Loading...</em></p>
+
+<table class='table' *ngIf="templates">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Body</th>
+      <th>Created Date</th>
+      <th>Inactive?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let template of templates">
+      <td>{{ template.id }}</td>
+      <td>{{ template.name }}</td>
+      <td>{{ template.body }}</td>
+      <td>{{ template.createdDate }}</td>
+      <td>{{ template.isInactive }}</td>
+    </tr>
+  </tbody>
+</table>

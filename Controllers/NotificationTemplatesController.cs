@@ -22,7 +22,8 @@ namespace NotificationTemplateManager.Controllers
         }
 
         // GET: api/NotificationTemplates
-        [HttpGet]
+        //[HttpGet]
+        [HttpGet("[action]")]
         public IEnumerable<NotificationTemplate> GetTemplates()
         {
             return _context.Templates;
