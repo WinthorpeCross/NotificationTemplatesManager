@@ -10,7 +10,7 @@ using NotificationTemplateManager.Data;
 namespace NotificationTemplateManager.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20181111151737_First Migration")]
+    [Migration("20181113172433_First Migration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,11 +31,17 @@ namespace NotificationTemplateManager.Migrations
 
                     b.Property<DateTime>("CreatedDate");
 
+                    b.Property<bool>("IsInactive");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
 
                     b.ToTable("Templates");
+
+                    b.HasData(
+                        new { Id = 1, Body = "HTML<>", CreatedDate = new DateTime(2018, 11, 13, 17, 24, 33, 538, DateTimeKind.Local), IsInactive = false, Name = "Test" }
+                    );
                 });
 #pragma warning restore 612, 618
         }

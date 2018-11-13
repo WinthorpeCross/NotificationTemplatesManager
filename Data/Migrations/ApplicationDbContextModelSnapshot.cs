@@ -38,7 +38,7 @@ namespace NotificationTemplateManager.Migrations
                     b.ToTable("Templates");
 
                     b.HasData(
-                        new { Id = 1, Body = "HTML<>", CreatedDate = new DateTime(2018, 11, 12, 23, 4, 42, 208, DateTimeKind.Local), IsInactive = false, Name = "Test" }
+                        new { Id = 1, Body = "HTML<>", CreatedDate = new DateTime(2018, 11, 13, 17, 24, 33, 538, DateTimeKind.Local), IsInactive = false, Name = "Test" }
                     );
                 });
 #pragma warning restore 612, 618

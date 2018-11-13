@@ -16,12 +16,18 @@ namespace NotificationTemplateManager.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     Body = table.Column<string>(nullable: true),
-                    CreatedDate = table.Column<DateTime>(nullable: false)
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    IsInactive = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Templates", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Templates",
+                columns: new[] { "Id", "Body", "CreatedDate", "IsInactive", "Name" },
+                values: new object[] { 1, "HTML<>", new DateTime(2018, 11, 13, 17, 24, 33, 538, DateTimeKind.Local), false, "Test" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
